@@ -33,12 +33,12 @@ if [ $? -lt 2 ]; then
 fi
 
 if [ ! -d $SOURCE_DIR ]; then
-    echo "$R $SOURCE_DIR does not exist $N"
+    log "$R Source Directory: $SOURCE_DIR does not exist $N"
     exit 1
 fi
 
 if [ ! -d $DEST_DIR_DIR ]; then
-    echo "$R $DEST_DIR does not exist $N"
+    log "$R Destination Directory: $DEST_DIR does not exist $N"
     exit 1
 fi
 
