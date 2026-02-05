@@ -8,6 +8,9 @@ W_BG_R_T=$"\033[0;31;47m"
 R="\e[31m"
 Y="\e[33m"
 N="\e[0m"
+SOURCE_DIR=$1
+DEST_DIR=$2
+DAYS=${3:-14} # 14 days is the default value, if the user not supplied
 
 if [ $USERID -ne 0 ]; then
     echo -e $R "Please run this command with sudo access only" $N 
@@ -23,4 +26,14 @@ USAGE(){
 
 if [ $? -lt 2 ]; then
     USAGE
+fi
+
+if [ ! -d $SOURCE_DIR ]; then
+    echo "$R $SOURCE_DIR does not exist $N"
+    exit 1
+fi
+
+if [ ! -d $DEST_DIR_DIR ]; then
+    echo "$R $DEST_DIR does not exist $N"
+    exit 1
 fi
