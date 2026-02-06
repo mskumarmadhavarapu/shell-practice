@@ -10,6 +10,7 @@ MESSAGE=""
 
 IP_ADDRESS=$(curl http://169.254.169.254/latest/meta-data/local-ipv4
 )
+
 log(){
     echo -e "$(date "+%Y-%m-%d %H:%M:%S") | $1" | tee -a $LOGS_FILE
 }
