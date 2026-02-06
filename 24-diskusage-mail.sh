@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 LOGS_FOLDER="/var/log/shell-script"
 LOGS_FILE="/var/log/shell-script/backup.log"
 R="\e[31m"
@@ -20,7 +21,7 @@ do
     PARTITION=$( echo line | awk '{print $7}')
 
     if [ "$USAGE" -ge "$USAGE_THRESHOLD" ]; then
-        MESSAGE+="High Disk usage on $PARTITION: $USAGE \n"
+        MESSAGE+="High Disk usage on $PARTITION: $USAGE% \n"
     fi
 done <<< $DISK_USAGE
 
